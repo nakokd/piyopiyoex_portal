@@ -1,0 +1,28 @@
+<div>
+  <h2><%= @title %></h2>
+
+  <.form
+    let={f}
+    for={@changeset}
+    id="message-form"
+    phx-target={@myself}
+    phx-change="validate"
+    phx-submit="save">
+  
+    <%= label f, :display_name %>
+    <%= text_input f, :display_name %>
+    <%= error_tag f, :display_name %>
+  
+    <%= label f, :message %>
+    <%= textarea f, :message %>
+    <%= error_tag f, :message %>
+  
+    <%= label f, :deleted_at %>
+    <%= datetime_select f, :deleted_at %>
+    <%= error_tag f, :deleted_at %>
+  
+    <div>
+      <%= submit "Save", phx_disable_with: "Saving..." %>
+    </div>
+  </.form>
+</div>

@@ -1,0 +1,36 @@
+<h1>Show Message</h1>
+
+<%= if @live_action in [:edit] do %>
+  <.modal return_to={Routes.message_show_path(@socket, :show, @message)}>
+    <.live_component
+      module={PiyopiyoexPortalWeb.MessageLive.FormComponent}
+      id={@message.id}
+      title={@page_title}
+      action={@live_action}
+      message={@message}
+      return_to={Routes.message_show_path(@socket, :show, @message)}
+    />
+  </.modal>
+<% end %>
+
+<ul>
+
+  <li>
+    <strong>Display name:</strong>
+    <%= @message.display_name %>
+  </li>
+
+  <li>
+    <strong>Message:</strong>
+    <%= @message.message %>
+  </li>
+
+  <li>
+    <strong>Deleted at:</strong>
+    <%= @message.deleted_at %>
+  </li>
+
+</ul>
+
+<span><%= live_patch "Edit", to: Routes.message_show_path(@socket, :edit, @message), class: "button" %></span> |
+<span><%= live_redirect "Back", to: Routes.message_index_path(@socket, :index) %></span>
