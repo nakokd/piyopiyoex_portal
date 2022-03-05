@@ -10,10 +10,8 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
 
-## Learn more
+## piyopiyo.exポータルサイト（感想投稿＆表示）
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+ドキュメント＆ワイヤーフレーム
+https://docs.google.com/document/d/1fvYlRj9ypSLPxnjRyI2OMb8ydDa25HTJ4ed6HXG32IU/edit#
+
