@@ -13,7 +13,7 @@ defmodule PiyopiyoexPortal.Messages.Message do
   @doc false
   def changeset(message, attrs) do
     message
-    |> cast(attrs, [:display_name, :message, :deleted_at])
-    |> validate_required([:display_name, :message, :deleted_at])
+    |> cast(attrs, [:display_name, :message])
+    |> validate_required([:display_name, :message])
   end
 end

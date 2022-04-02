@@ -16,11 +16,7 @@
     <%= label f, :message %>
     <%= textarea f, :message %>
     <%= error_tag f, :message %>
-  
-    <%= label f, :deleted_at %>
-    <%= datetime_select f, :deleted_at %>
-    <%= error_tag f, :deleted_at %>
-  
+    
     <div>
       <%= submit "Save", phx_disable_with: "Saving..." %>
     </div>
