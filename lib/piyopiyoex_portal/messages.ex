@@ -13,12 +13,15 @@ defmodule PiyopiyoexPortal.Messages do
 
   ## Examples
 
-      iex> list_messages()
+      iex> list_messages()4
       [%Message{}, ...]
 
   """
   def list_messages do
-    Repo.all(Message)
+    Message
+    |> limit(5)
+    |> order_by(desc: :updated_at)
+    |> Repo.all()
   end
 
   @doc """
