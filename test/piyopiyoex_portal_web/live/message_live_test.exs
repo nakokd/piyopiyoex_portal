@@ -4,9 +4,21 @@ defmodule PiyopiyoexPortalWeb.MessageLiveTest do
   import Phoenix.LiveViewTest
   import PiyopiyoexPortal.MessagesFixtures
 
-  @create_attrs %{deleted_at: %{day: 4, hour: 5, minute: 12, month: 3, year: 2022}, display_name: "some display_name", message: "some message"}
-  @update_attrs %{deleted_at: %{day: 5, hour: 5, minute: 12, month: 3, year: 2022}, display_name: "some updated display_name", message: "some updated message"}
-  @invalid_attrs %{deleted_at: %{day: 30, hour: 5, minute: 12, month: 2, year: 2022}, display_name: nil, message: nil}
+  @create_attrs %{
+    deleted_at: %{day: 4, hour: 5, minute: 12, month: 3, year: 2022},
+    display_name: "some display_name",
+    message: "some message"
+  }
+  @update_attrs %{
+    deleted_at: %{day: 5, hour: 5, minute: 12, month: 3, year: 2022},
+    display_name: "some updated display_name",
+    message: "some updated message"
+  }
+  @invalid_attrs %{
+    deleted_at: %{day: 30, hour: 5, minute: 12, month: 2, year: 2022},
+    display_name: nil,
+    message: nil
+  }
 
   defp create_message(_) do
     message = message_fixture()
