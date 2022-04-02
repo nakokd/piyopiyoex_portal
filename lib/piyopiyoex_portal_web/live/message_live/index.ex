@@ -5,8 +5,8 @@ defmodule PiyopiyoexPortalWeb.MessageLive.Index do
   alias PiyopiyoexPortal.Messages.Message
 
   @impl true
-  def mount(_params, _session, socket) do
-    {:ok, assign(socket, :messages, list_messages())}
+  def mount(params, _session, socket) do
+    {:ok, assign(socket, :messages, list_messages(params))}
   end
 
   @impl true
@@ -40,7 +40,10 @@ defmodule PiyopiyoexPortalWeb.MessageLive.Index do
     {:noreply, assign(socket, :messages, list_messages())}
   end
 
-  defp list_messages do
+  defp list_messages(%{"mode" => mode}) do
+    Messages.list_messages(mode)
+  end
+  defp list_messages(_ \\ %{}) do
     Messages.list_messages()
   end
 end

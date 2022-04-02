@@ -17,10 +17,17 @@ defmodule PiyopiyoexPortal.Messages do
       [%Message{}, ...]
 
   """
-  def list_messages do
+
+  def list_messages("all") do
     Message
-    |> limit(5)
     |> order_by(desc: :updated_at)
+    |> Repo.all()
+  end
+
+  def list_messages() do
+    Message
+    |> order_by(desc: :updated_at)
+    |> limit(5)
     |> Repo.all()
   end
 
