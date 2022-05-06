@@ -1,4 +1,10 @@
-<main class="container">
+<main class="m-6">
+  <div class="bg-white rounded-md mb-6 pr-6 pl-6">
+    <a href="/">
+      <img src="./images/piyopiyo_logo.png" alt="piyopiyo.ex logo" width="450px" />
+    </a>
+  </div>
+
   <p class="alert alert-info" role="alert"
     phx-click="lv:clear-flash"
     phx-value-key="info"><%= live_flash(@flash, :info) %></p>
@@ -7,5 +13,7 @@
     phx-click="lv:clear-flash"
     phx-value-key="error"><%= live_flash(@flash, :error) %></p>
 
-  <%= @inner_content %>
+  <div class="bg-white rounded-md pr-8 pl-8 pt-4 pb-8">
+    <%= @inner_content %>
+  </div>
 </main>
