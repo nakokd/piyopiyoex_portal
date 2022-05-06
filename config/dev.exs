@@ -25,7 +25,15 @@ config :piyopiyoex_portal, PiyopiyoexPortalWeb.Endpoint,
   secret_key_base: "zfYC0HA7E5Ha0KGdKYvxu4WhQCPYJ5UoiI0v9+TQO6lJYIG08ypDUN86Bn6OfKSa",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
-    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
+    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
+    npx: [
+      "tailwindcss",
+      "--input=css/app.css",
+      "--output=../priv/static/assets/app.css",
+      "--watch",
+      cd: Path.expand("../assets", __DIR__)
+    ]
+
   ]
 
 # ## SSL Support
