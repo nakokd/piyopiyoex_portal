@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-yellow-200">
   <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -11,8 +11,8 @@
   </head>
   <body>
     <header>
-      <section class="container">
-        <nav>
+      <section>
+        <nav class="container">
           <ul>
             <li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
             <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
@@ -20,11 +20,15 @@
             <% end %>
           </ul>
         </nav>
-        <a href="https://phoenixframework.org/" class="phx-logo">
-          <img src={Routes.static_path(@conn, "/images/phoenix.png")} alt="Phoenix Framework Logo"/>
-        </a>
+        <div class="container mx-auto bg-white rounded-md mt-6 mb-6 pr-6 pl-6 w-4/5">
+          <a href="/">
+            <img src="./images/piyopiyo_logo.png" alt="piyopiyo.ex logo" width="450px" class="mx-auto" />
+          </a>
+       </div>
       </section>
     </header>
-    <%= @inner_content %>
+    <div class="mx-auto container w-4/5">
+      <%= @inner_content %>
+    </div>
   </body>
 </html>

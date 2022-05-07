@@ -1,4 +1,4 @@
-<main class="container">
+<main>
   <p class="alert alert-info" role="alert"
     phx-click="lv:clear-flash"
     phx-value-key="info"><%= live_flash(@flash, :info) %></p>
@@ -7,5 +7,7 @@
     phx-click="lv:clear-flash"
     phx-value-key="error"><%= live_flash(@flash, :error) %></p>
 
-  <%= @inner_content %>
+  <div class="bg-white rounded-md pr-8 pl-8 pt-4 pb-8">
+    <%= @inner_content %>
+  </div>
 </main>

@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "deploy": "NODE_ENV=production tailwindcss --minify -i css/app.css -o ../priv/static/assets/app.css"
+  },
+  "dependencies": {
+    "daisyui": "^2.14.3"
+  },
+  "devDependencies": {
+    "tailwindcss": "^2.2.8"
+  }
+}
