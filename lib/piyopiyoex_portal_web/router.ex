@@ -19,7 +19,7 @@ defmodule PiyopiyoexPortalWeb.Router do
 
     live "/", MessageLive.Index, :index
     live "/:mode", MessageLive.Index, :index
-    post "/messages/new", MessageLive.Index, :new
+
     live "/messages/new", MessageLive.Index, :new
   end
 
