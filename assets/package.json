@@ -1,10 +1,8 @@
 {
   "scripts": {
-    "deploy": "cd .. && mix assets.deploy && mix assets.tailwind && rm -f _build/esbuild*"
+    "deploy": "NODE_ENV=production tailwindcss --minify -i css/app.css -o ../priv/static/assets/app.css"
   },
-  "dependencies": {
-    "daisyui": "^2.14.3"
-  },
+  "dependencies": {},
   "devDependencies": {
     "tailwindcss": "^2.2.8"
   }
