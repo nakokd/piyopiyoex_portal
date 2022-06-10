@@ -7,13 +7,23 @@
     phx-change="validate"
     phx-submit="save">
   
-    <%= label f, "呼ばれたい名前" %>
-    <%= text_input f, :display_name, class: ~w(input input-bordered input-accent) %>
-    <%= error_tag f, :display_name %>
-  
-    <%= label f, "イベント終了後に、楽しかったかどうか？piyopiyo.exにやってほしいことがあれば教えてください" %>
-    <%= textarea f, :message, class: ~w(textarea textarea-accent) %>
-    <%= error_tag f, :message %>
+    <div class="mb-4">
+      <div class="mb-2">呼ばれたい名前</div>
+      <div>
+        <%= text_input f, :display_name, class: ~w(input input-bordered input-accent) %>
+        <%= error_tag f, :display_name %>
+      </div>
+    </div>
+    <div class="mb-4">
+      <div class="mb-2">
+        イベントは楽しかったでしょうか？<br />
+        piyopiyo.exにやってほしいことがあれば教えてください
+      </div>
+      <div>
+        <%= textarea f, :message, class: ~w(textarea textarea-accent w-10/12) %>
+        <%= error_tag f, :message %>
+      </div>
+    </div>
     
     <div>
       <%= submit "感想を投稿", phx_disable_with: "Saving..." , class: ["btn", "btn-success"]%>
