@@ -15,15 +15,15 @@
   <table class="w-full mt-4 mb-6 border-collapse border border-slate-400">
     <thead>
       <tr>
-        <th class="border border-slate-300 bg-slate-100 p-3">お名前</th>
-        <th class="border border-slate-300 bg-slate-100 p-3">感想</th>
+        <th class="border border-slate-300 bg-slate-100 p-1 py-2">お名前</th>
+        <th class="border border-slate-300 bg-slate-100 p-1 py-2">感想</th>
       </tr>
     </thead>
     <tbody id="messages">
       <%= for message <- @messages do %>
         <tr id={"message-#{message.id}"}>
-          <td class="border border-slate-300 p-3"><%= message.display_name %></td>
-          <td class="border border-slate-300 p-3"><%= message.message %></td>
+          <td class="border border-slate-300 px-1 py-2"><%= message.display_name %></td>
+          <td class="border border-slate-300 px-1 py-2"><%= message.message %></td>
         </tr>
       <% end %>
     </tbody>
