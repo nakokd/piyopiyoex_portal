@@ -11,7 +11,7 @@
   </.modal>
 <% end %>
 
-<table class="w-full mt-4 mb-4 border-collapse border border-slate-400">
+<table class="w-full mt-4 mb-6 border-collapse border border-slate-400">
   <thead>
     <tr>
       <th class="border border-slate-300 bg-slate-100 p-3">お名前</th>
@@ -29,4 +29,4 @@
 </table>
 
 <span><%= live_patch "感想を投稿する", to: Routes.message_index_path(@socket, :new), class: ["btn", "btn-success"] %></span>
-<span><%= live_patch "全部の感想を見る", to: Routes.message_index_path(@socket, :new), class: ["btn", "btn-link"] %></span>
+<span><a href="/all" class="btn btn-link">全部の感想を見る</a></span>
