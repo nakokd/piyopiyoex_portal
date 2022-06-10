@@ -14,21 +14,14 @@ defmodule PiyopiyoexPortalWeb.MessageLive.Index do
     {:noreply, apply_action(socket, socket.assigns.live_action, params)}
   end
 
-  defp apply_action(socket, :edit, %{"id" => id}) do
-    socket
-    |> assign(:page_title, "Edit Message")
-    |> assign(:message, Messages.get_message!(id))
-  end
-
   defp apply_action(socket, :new, _params) do
     socket
-    |> assign(:page_title, "New Message")
+    |> assign(:page_title, "感想投稿")
     |> assign(:message, %Message{})
   end
 
   defp apply_action(socket, :index, _params) do
     socket
-    |> assign(:page_title, "Listing Messages")
     |> assign(:message, nil)
   end
 
