@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="bg-yellow-200">
-  <head>
+  <head prefix="og: http://ogp.me/ns#">
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -8,6 +8,13 @@
     <%= live_title_tag assigns[:page_title] || "PiyopiyoexPortal", suffix: " · Phoenix Framework" %>
     <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css")}/>
     <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js")}></script>
+    <meta name="og:url" content="https://piyopiyoex-portal.gigalixirapp.com/">
+    <meta name="og:image" content="/images/piyopiyo_logo_ogp.png">
+    <meta name="og:description" content="piyopiyo.exポータルサイトです。piyopiyo.exはElixir/Phoniexの入門者向け日本コミュニティです。">
+    <meta name="og:type" content="article">
+    <meta name="og:title" content="piyopiyo.exポータル">
+    <meta name="keywords" lang="ja" content="piyopiyo.ex">
+    <meta name="description" lang="ja" content="piyopiyo.exポータルサイトです。piyopiyo.exはElixir/Phoniexの入門者向け日本コミュニティです。" >
   </head>
   <body>
     <header>
