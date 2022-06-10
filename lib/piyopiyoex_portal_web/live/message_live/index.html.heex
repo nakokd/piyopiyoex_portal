@@ -11,22 +11,36 @@
   </.modal>
 <% end %>
 
-<table class="w-full mt-4 mb-6 border-collapse border border-slate-400">
-  <thead>
-    <tr>
-      <th class="border border-slate-300 bg-slate-100 p-3">お名前</th>
-      <th class="border border-slate-300 bg-slate-100 p-3">感想</th>
-    </tr>
-  </thead>
-  <tbody id="messages">
-    <%= for message <- @messages do %>
-      <tr id={"message-#{message.id}"}>
-        <td class="border border-slate-300 p-3"><%= message.display_name %></td>
-        <td class="border border-slate-300 p-3"><%= message.message %></td>
+<div class="bg-white rounded-md pr-8 pl-8 pt-4 pb-8 mb-8">
+  <table class="w-full mt-4 mb-6 border-collapse border border-slate-400">
+    <thead>
+      <tr>
+        <th class="border border-slate-300 bg-slate-100 p-3">お名前</th>
+        <th class="border border-slate-300 bg-slate-100 p-3">感想</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody id="messages">
+      <%= for message <- @messages do %>
+        <tr id={"message-#{message.id}"}>
+          <td class="border border-slate-300 p-3"><%= message.display_name %></td>
+          <td class="border border-slate-300 p-3"><%= message.message %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<span><%= live_patch "感想を投稿する", to: Routes.message_index_path(@socket, :new), class: ["btn", "btn-success"] %></span>
-<span><a href="/all" class="btn btn-link">全部の感想を見る</a></span>
+  <span><%= live_patch "感想を投稿する", to: Routes.message_index_path(@socket, :new), class: ["btn", "btn-success"] %></span>
+  <span><a href="/all" class="btn btn-link">全部の感想を見る</a></span>
+</div>
+
+<div class="bg-white rounded-md bg-yellow-100 pr-8 pl-8 pt-4 pb-8">
+  <h2 class="text-2xl font-bold text-slate-600 mb-4">About "piyopiyo.ex"</h2>
+  <div class="mb-4">
+    piyopiyo.exは、プログラミング言語Elixirと、Elixirで記述されたWeb開発フレームワークPhoenixを扱う、初心者向けコミュニティです。<br />
+    ※Elixirは拡張性と保守性の高いアプリケーションを構築するためにデザインされた、動的で関数型のプログラミング言語です。<br />
+  </div>
+  <div>
+    piyopiyo.exは毎月1回の頻度で勉強会を開催しています。<br />
+    <a class="text-blue-600 visited:text-purple-600 underline" href="https://piyopiyoex.connpass.com/event/">connpass</a>からぜひご参加ください。
+  </div>
+</div>
