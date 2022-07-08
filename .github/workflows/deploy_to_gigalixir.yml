@@ -1,5 +1,6 @@
 name: Deploy to Gigalixir
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -7,9 +8,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - run: sudo pip install gigalixir --ignore-installed six
-      - run: gigalixir login -e "${{ secrets.GIGALIXIR_EMAIL }}" -y -p "${{ secrets.GIGALIXIR_PASSWORD }}"
-      - run: gigalixir git:remote ${{ secrets.GIGALIXIR_APP_NAME }}
-      - run: git push -f gigalixir HEAD:refs/heads/main
-      - run: gigalixir run mix ecto.migrate
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: git push gigalixir
+        run: |
+          git remote add gigalixir https://${{ secrets.GIGALIXIR_EMAIL }}:${{ secrets.GIGALIXIR_API_KEY }}@git.gigalixir.com/${{ secrets.GIGALIXIR_APP_NAME }}.git
+          git push -f gigalixir HEAD:refs/heads/main
