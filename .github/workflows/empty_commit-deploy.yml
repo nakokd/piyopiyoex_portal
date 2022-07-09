@@ -1,0 +1,23 @@
+name: empty commit and deploy
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 1,20 * *'
+
+jobs:
+  commit-push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: empty commit
+        run: |
+          git config user.name "nako-kd"
+          git config user.email "${{ secrets.GITHUB_USER_EMAIL }}"
+          git commit --allow-empty -m "empty commit"
+          git push origin main
+      - name: deploy
+        run: |
+          git remote add gigalixir https://${{ secrets.GIGALIXIR_EMAIL }}:${{ secrets.GIGALIXIR_API_KEY }}@git.gigalixir.com/${{ secrets.GIGALIXIR_APP_NAME }}.git
+          git push -f gigalixir HEAD:refs/heads/main
