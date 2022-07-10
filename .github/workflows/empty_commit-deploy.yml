@@ -2,7 +2,7 @@ name: empty commit and deploy
 on:
   workflow_dispatch:
   schedule:
-    - cron: '25 7 * * *'
+    - cron: '10 8 * * *'
 
 jobs:
   commit-push:
