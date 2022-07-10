@@ -2,7 +2,7 @@ name: empty commit and deploy
 on:
   workflow_dispatch:
   schedule:
-    - cron: '50 6 * * *'
+    - cron: '25 7 * * *'
 
 jobs:
   commit-push:
@@ -16,7 +16,7 @@ jobs:
           git config user.name "nako-kd"
           git config user.email "${{ secrets.GITHUB_USER_EMAIL }}"
           git commit --allow-empty -m "empty commit"
-          git push origin main
+          git push -f origin main
       - name: deploy
         run: |
           git remote add gigalixir https://${{ secrets.GIGALIXIR_EMAIL }}:${{ secrets.GIGALIXIR_API_KEY }}@git.gigalixir.com/${{ secrets.GIGALIXIR_APP_NAME }}.git
