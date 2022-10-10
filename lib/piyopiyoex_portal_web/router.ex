@@ -17,9 +17,10 @@ defmodule PiyopiyoexPortalWeb.Router do
   scope "/", PiyopiyoexPortalWeb do
     pipe_through :browser
 
+    get "/policy", PageController, :policy
+
     live "/", MessageLive.Index, :index
     live "/:mode", MessageLive.Index, :index
-
     live "/messages/new", MessageLive.Index, :new
   end
 
